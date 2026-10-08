@@ -1,0 +1,70 @@
+{
+  "before": {
+    "rows": 891,
+    "columns": 12,
+    "missing_total": 866,
+    "missing_by_col": {
+      "Age": 177,
+      "Cabin": 687,
+      "Embarked": 2
+    },
+    "duplicate_rows": 0,
+    "duplicate_ignoring_id": 0,
+    "zero_fares": 15,
+    "untrimmed_text": 2,
+    "dtypes": {
+      "PassengerId": "int64",
+      "Survived": "int64",
+      "Pclass": "int64",
+      "Name": "str",
+      "Sex": "str",
+      "Age": "float64",
+      "SibSp": "int64",
+      "Parch": "int64",
+      "Ticket": "str",
+      "Fare": "float64",
+      "Cabin": "str",
+      "Embarked": "str"
+    }
+  },
+  "after": {
+    "rows": 891,
+    "columns": 17,
+    "missing_total": 0,
+    "missing_by_col": {},
+    "duplicate_rows": 0,
+    "duplicate_ignoring_id": 0,
+    "zero_fares": 0,
+    "untrimmed_text": 0,
+    "dtypes": {
+      "PassengerId": "int32",
+      "Survived": "bool",
+      "Pclass": "category",
+      "Name": "string",
+      "Sex": "category",
+      "Age": "float32",
+      "SibSp": "int8",
+      "Parch": "int8",
+      "Ticket": "string",
+      "Fare": "float64",
+      "Cabin": "string",
+      "Embarked": "category",
+      "Title": "category",
+      "FareWasZero": "bool",
+      "AgeWasMissing": "bool",
+      "HasCabin": "bool",
+      "Deck": "category"
+    }
+  },
+  "steps": [
+    "Duplicates removed: 0 (checked exact rows and rows identical except PassengerId)",
+    "Title variants unified: Mlle/Ms \u2192 Miss, Mme \u2192 Mrs, 10 rare honorifics \u2192 Rare",
+    "Fares of 0 flagged as invalid: 15",
+    "Out-of-range ages set to missing: 0; negative family counts: 0",
+    "Age imputed for 177 passengers (median by Title \u00d7 Pclass), flagged in AgeWasMissing",
+    "Zero fares replaced with median fare of their passenger class",
+    "Embarked filled for 2 passengers with the most common port (S)",
+    "Cabin missing values labelled 'Unknown'; Deck and HasCabin columns derived",
+    "Types converted: Survived \u2192 bool, Pclass \u2192 ordered category, Sex/Embarked/Title/Deck \u2192 category, SibSp/Parch \u2192 int8, text \u2192 string"
+  ]
+}
